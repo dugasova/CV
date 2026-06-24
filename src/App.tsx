@@ -1,11 +1,30 @@
+import { useTranslation } from "react-i18next";
+
 export default function App() {
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === "en";
+
+  const toggleLang = () => i18n.changeLanguage(isEn ? "ua" : "en");
+
   return (
     <div className="min-h-screen bg-stone-50 font-sans text-stone-700 antialiased print:bg-white">
       <div className="mx-auto max-w-[800px] px-8 py-16 sm:py-20">
+        {/* Language toggle */}
+        <div className="mb-10 flex justify-end print:hidden">
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 rounded-full border border-stone-200 bg-white px-4 py-1.5 text-xs font-medium text-stone-500 shadow-sm transition-all hover:border-stone-300 hover:text-stone-700"
+          >
+            <span className={isEn ? "text-stone-900" : ""}>EN</span>
+            <span className="text-stone-300">/</span>
+            <span className={!isEn ? "text-stone-900" : ""}>UA</span>
+          </button>
+        </div>
+
         {/* Header */}
         <header className="mb-14">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent-muted">
-            Junior Frontend Developer
+            {t("title")}
           </p>
           <h1 className="mt-3 font-serif text-5xl font-bold tracking-tight text-stone-900 sm:text-6xl">
             Natalia
@@ -23,66 +42,62 @@ export default function App() {
         </header>
 
         {/* About */}
-        <Section title="About">
+        <Section title={t("about.heading")}>
           <p className="max-w-[620px] text-[15px] leading-[1.75] text-stone-600">
-            Motivated frontend developer with a strong foundation in React and
-            TypeScript. Experienced in the full cycle of SPA development — from
-            project architecture and state management to authentication,
-            localization, testing, and deployment. Passionate about clean code,
-            responsive design, and great user experience.
+            {t("about.text")}
           </p>
         </Section>
 
         {/* Skills */}
-        <Section title="Skills">
+        <Section title={t("skills.heading")}>
           <div className="grid grid-cols-2 gap-x-12 gap-y-5 sm:grid-cols-3">
             <SkillGroup
-              title="Core"
+              title={t("skills.core")}
               items={["React 19", "TypeScript", "JavaScript ES6+", "HTML5 / CSS3"]}
             />
             <SkillGroup
-              title="State & Routing"
+              title={t("skills.stateRouting")}
               items={["Redux Toolkit", "React Router", "Context API"]}
             />
             <SkillGroup
-              title="Forms & Validation"
+              title={t("skills.formsValidation")}
               items={["react-hook-form", "Zod"]}
             />
             <SkillGroup
-              title="Backend & Auth"
+              title={t("skills.backendAuth")}
               items={["Firebase Auth", "Firestore", "REST API"]}
             />
             <SkillGroup
-              title="UI & Animation"
+              title={t("skills.uiAnimation")}
               items={["SCSS", "Tailwind CSS", "Framer Motion", "Swiper"]}
             />
             <SkillGroup
-              title="Tooling & Testing"
+              title={t("skills.toolingTesting")}
               items={["Vite", "Git", "Vitest", "Playwright", "react-i18next"]}
             />
           </div>
         </Section>
 
         {/* Projects */}
-        <Section title="Projects">
+        <Section title={t("projects.heading")}>
           <div className="space-y-10">
             <Project
               name="BeautyBag"
-              description="E-commerce storefront for beauty products. Product catalog with search & filtering, persistent cart and wishlist, Firebase authentication with protected routes, full checkout flow, dark/light theme, and bilingual support."
+              description={t("projects.beautybag")}
               tech={["React 19", "TypeScript", "Redux Toolkit", "Firebase", "Framer Motion", "SCSS"]}
               code="https://github.com/dugasova/Beautybag"
               demo="https://beautybag.dugasova.workers.dev/"
             />
             <Project
               name="BiteForge"
-              description="Interactive burger builder with real-time price and calorie tracking. Menu catalog with ratings, checkout workflow, user accounts with saved custom burgers, theme switching, and E2E test coverage."
+              description={t("projects.biteforge")}
               tech={["React 19", "TypeScript", "Redux Toolkit", "Firebase", "Playwright", "SCSS"]}
               code="https://github.com/dugasova/BiteForge"
               demo="https://biteforge.dugasova.workers.dev/"
             />
             <Project
               name="Dog Club"
-              description="Pet food e-commerce SPA with sorting, live search, cart management, order history via Firestore, and bilingual interface. Includes a comprehensive test suite — 107 tests across 23 files."
+              description={t("projects.dogclub")}
               tech={["React 18", "TypeScript", "Context API", "Firebase", "Vitest", "SCSS"]}
               code="https://github.com/dugasova/dog-club"
               demo="https://dog-club.dugasova.workers.dev/"
@@ -91,7 +106,7 @@ export default function App() {
         </Section>
 
         {/* Education */}
-        <Section title="Education">
+        <Section title={t("education.heading")}>
           <div className="space-y-4">
             {[
               {
@@ -125,7 +140,7 @@ export default function App() {
                   rel="noreferrer"
                   className="text-sm text-accent-muted transition-colors hover:text-accent"
                 >
-                  Certificate ↗
+                  {t("education.certificate")} ↗
                 </a>
               </div>
             ))}
@@ -183,6 +198,8 @@ function Project({
   code: string;
   demo: string;
 }) {
+  const { t } = useTranslation();
+
   return (
     <div className="group rounded-xl border border-stone-150 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
       <div className="flex flex-wrap items-baseline justify-between gap-3">
@@ -194,7 +211,7 @@ function Project({
             rel="noreferrer"
             className="text-accent-muted transition-colors hover:text-accent"
           >
-            Live ↗
+            {t("projects.live")} ↗
           </a>
           <a
             href={code}
@@ -202,7 +219,7 @@ function Project({
             rel="noreferrer"
             className="text-accent-muted transition-colors hover:text-accent"
           >
-            Code ↗
+            {t("projects.code")} ↗
           </a>
         </div>
       </div>

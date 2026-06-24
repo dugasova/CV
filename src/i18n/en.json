@@ -1,0 +1,28 @@
+{
+  "title": "Junior Frontend Developer",
+  "about": {
+    "heading": "About",
+    "text": "Motivated frontend developer with a strong foundation in React and TypeScript. Experienced in the full cycle of SPA development — from project architecture and state management to authentication, localization, testing, and deployment. Passionate about clean code, responsive design, and great user experience."
+  },
+  "skills": {
+    "heading": "Skills",
+    "core": "Core",
+    "stateRouting": "State & Routing",
+    "formsValidation": "Forms & Validation",
+    "backendAuth": "Backend & Auth",
+    "uiAnimation": "UI & Animation",
+    "toolingTesting": "Tooling & Testing"
+  },
+  "projects": {
+    "heading": "Projects",
+    "live": "Live",
+    "code": "Code",
+    "beautybag": "E-commerce storefront for beauty products. Product catalog with search & filtering, persistent cart and wishlist, Firebase authentication with protected routes, full checkout flow, dark/light theme, and bilingual support.",
+    "biteforge": "Interactive burger builder with real-time price and calorie tracking. Menu catalog with ratings, checkout workflow, user accounts with saved custom burgers, theme switching, and E2E test coverage.",
+    "dogclub": "Pet food e-commerce SPA with sorting, live search, cart management, order history via Firestore, and bilingual interface. Includes a comprehensive test suite."
+  },
+  "education": {
+    "heading": "Education",
+    "certificate": "Certificate"
+  }
+}
