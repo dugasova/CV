@@ -13,7 +13,7 @@ export default function App() {
             Dugasova
           </h1>
           <div className="mt-6 flex flex-wrap items-center gap-5 text-sm text-stone-500">
-            <HeaderLink href="dugasova@gmail.com" icon="mail">
+            <HeaderLink href="mailto:dugasova@gmail.com" icon="mail">
               dugasova@gmail.com
             </HeaderLink>
             <HeaderLink href="https://github.com/dugasova" icon="github">
