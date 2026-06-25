@@ -121,6 +121,28 @@ export default function App() {
           </div>
         </Section>
 
+        {/* Languages */}
+        <Section title={t("languages.heading")}>
+          <div className="flex gap-10">
+            <div>
+              <span className="text-[15px] font-medium text-stone-800">
+                {t("languages.ukrainian")}
+              </span>
+              <span className="ml-2 text-sm text-stone-400">
+                — {t("languages.nativeLevel")}
+              </span>
+            </div>
+            <div>
+              <span className="text-[15px] font-medium text-stone-800">
+                {t("languages.english")}
+              </span>
+              <span className="ml-2 text-sm text-stone-400">
+                — {t("languages.englishLevel")}
+              </span>
+            </div>
+          </div>
+        </Section>
+
         {/* Education */}
         <Section title={t("education.heading")}>
           <div className="space-y-4">
