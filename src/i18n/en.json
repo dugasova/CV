@@ -21,6 +21,11 @@
     "biteforge": "Interactive burger builder with real-time price and calorie tracking. Menu catalog with ratings, checkout workflow, user accounts with saved custom burgers, theme switching, and E2E test coverage.",
     "dogclub": "Pet food e-commerce SPA with sorting, live search, cart management, order history via Firestore, and bilingual interface. Includes a comprehensive test suite."
   },
+  "expectations": {
+    "heading": "What I'm Looking For",
+    "want": "I am looking for a collaborative environment where I can learn from experienced engineers and receive constructive code reviews to improve my skills. I want to work on real-world projects where my tasks directly contribute to the product's success and allow me to apply my React/TypeScript foundation to practical challenges.",
+    "dontWant": "I would like to avoid completely unorganized environments with a total lack of processes or documentation. As a Junior Developer, having a baseline structure and a healthy feedback loop is crucial for me to adapt quickly and deliver value to the team efficiently."
+  },
   "education": {
     "heading": "Education",
     "certificate": "Certificate"

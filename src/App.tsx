@@ -109,6 +109,18 @@ export default function App() {
           </div>
         </Section>
 
+        {/* Expectations */}
+        <Section title={t("expectations.heading")}>
+          <div className="space-y-4 max-w-[620px]">
+            <p className="text-[15px] leading-[1.75] text-stone-600">
+              {t("expectations.want")}
+            </p>
+            <p className="text-[15px] leading-[1.75] text-stone-600">
+              {t("expectations.dontWant")}
+            </p>
+          </div>
+        </Section>
+
         {/* Education */}
         <Section title={t("education.heading")}>
           <div className="space-y-4">
